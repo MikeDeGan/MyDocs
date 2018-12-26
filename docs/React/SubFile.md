@@ -1,5 +1,5 @@
 ---
-title: My Document
+title: YAML-TestDocument
 summary: A brief description of my document.
 authors:
   - Waylan Limberg
@@ -10,3 +10,5 @@ department: Information Technology
 ---
 
 # test of file in sub folder
+
+<!-- can we search this comment -->
