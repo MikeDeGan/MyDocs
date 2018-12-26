@@ -1,9 +1,67 @@
-site_name: MyDocs
+# Project information
+site_name: 'MyDocs'
+site_description: 'Random development documentation'
+site_author: 'Mike DeGan'
+site_url: 'https://mikedegan.github.io/MyDocs/'
 
+# Repository
+repo_name: 'MikeDeGan/MyDocs'
+repo_url: 'https://github.com/MikeDeGan/MyDocs'
+
+# Copyright
+copyright: 'Copyright &copy; 2018 - 2019 Mike DeGan'
+
+# Configuration
 theme:
   name: 'material'
+  language: 'en'
   palette:
     primary: 'teal'
     accent: 'teal'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
   logo:
     icon: 'library_books'
+
+# Customization
+extra:
+  manifest: 'manifest.webmanifest'
+  social:
+    - type: 'github'
+      link: 'https://github.com/MikeDeGan'
+    - type: 'twitter'
+      link: 'https://twitter.com/MikeRockinOut'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/in/mike-degan/'
+
+# Google Analytics
+#google_analytics:
+#  - 'UA-XXXXXXXX-X'
+#  - 'auto'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - footnotes
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+# - meta
