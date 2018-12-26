@@ -22,19 +22,14 @@ Will create a skeleton html page.
 
 ## CSS
 
-??? m10
+??? note "m10"
+​    margin: 10px;
 
-lhjkghgkhjgkjh hg khgk kjhgk hgk kjhg khkjh
+!!! abstract "p10"
+    padding: 10px;
 
-​	margin: 10px;
-
-### p10
-
-​	padding: 10px;
-
-### dn
-
-​	display: none;
+!!! info "dn"
+    display: none;
 
 ---
 
