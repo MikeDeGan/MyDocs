@@ -36,7 +36,7 @@
     
     
       
-        <title>About - MyDocs</title>
+        <title>MkDocs - MyDocs</title>
       
     
     
@@ -80,7 +80,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#about" tabindex="1" class="md-skip">
+      <a href="#mkdocs" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -91,7 +91,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href=".." title="MyDocs" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">library_books</i>
           
         </a>
       </div>
@@ -106,7 +106,7 @@
                 MyDocs
               </span>
               <span class="md-header-nav__topic">
-                About
+                MkDocs
               </span>
             
           
@@ -163,7 +163,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href=".." title="MyDocs" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">library_books</i>
       
     </a>
     MyDocs
@@ -177,8 +177,8 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
+    <a href=".." title="Welcome to MkDocs" class="md-nav__link">
+      Welcome to MkDocs
     </a>
   </li>
 
@@ -197,9 +197,52 @@
       
     
     
-    <a href="./" title="About" class="md-nav__link md-nav__link--active">
-      About
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        MkDocs
+      </label>
+    
+    <a href="./" title="MkDocs" class="md-nav__link md-nav__link--active">
+      MkDocs
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-to-gh-pages" title="Deploy to GH Pages" class="md-nav__link">
+    Deploy to GH Pages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#develop-your-site" title="Develop Your Site" class="md-nav__link">
+    Develop Your Site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-documentation-project" title="Create a New Documentation Project" class="md-nav__link">
+    Create a New Documentation Project
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -221,6 +264,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-to-gh-pages" title="Deploy to GH Pages" class="md-nav__link">
+    Deploy to GH Pages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#develop-your-site" title="Develop Your Site" class="md-nav__link">
+    Develop Your Site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-documentation-project" title="Create a New Documentation Project" class="md-nav__link">
+    Create a New Documentation Project
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -232,8 +305,20 @@
               
                 
                 
-                <h1 id="about">About</h1>
-<p>Copyright 2019 Mike DeGan</p>
+                <h1 id="mkdocs">MkDocs</h1>
+<p>Static site generator used to build the <a href="https://mikedegan.github.io/MyDocs">MyDocs</a> documentation site.</p>
+<h2 id="deploy-to-gh-pages">Deploy to GH Pages</h2>
+<pre><code>mkdocs gh-deploy
+</code></pre>
+
+<h2 id="develop-your-site">Develop Your Site</h2>
+<pre><code>mkdocs serve
+</code></pre>
+
+<p>Then open <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> to see a live preview of your site.</p>
+<h2 id="create-a-new-documentation-project">Create a New Documentation Project</h2>
+<p><code>mkdocs new my-project
+cd my-project</code></p>
                 
                   
                 
@@ -254,7 +339,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Welcome to MkDocs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -263,7 +348,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Welcome to MkDocs
               </span>
             </div>
           </a>
