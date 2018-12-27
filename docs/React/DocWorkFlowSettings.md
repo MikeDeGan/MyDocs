@@ -1,4 +1,4 @@
-# test of file in sub folder
+# Documentation Work Flow Settings
 
 ![1545875084049](images/1545875084049.png)
 
