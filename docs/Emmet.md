@@ -8,7 +8,7 @@
 Will create a skeleton html page.
 ```
 
-### ul>li\*3#name\$
+### ul>li\\*3#name\$
 
 ```html
 <ul>
@@ -42,7 +42,7 @@ display: none;
 
 ---
 
-![Test Image](.\images\TestImage.png)
+[![Test Image](.\images\TestImage.png)](./images/TestImage.png)
 
 ## React
 
