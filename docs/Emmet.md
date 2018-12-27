@@ -39,7 +39,7 @@ display: none;
 
 ---
 
-![Test Image](C:\Users\Jackie\onedrive\development\docs\docs\images\testImage.png)
+![Test Image](.\images\testImage.png)
 
 ## React
 
