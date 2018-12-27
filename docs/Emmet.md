@@ -3,11 +3,13 @@
 ## HTML
 
 ### !
+
 ```
 Will create a skeleton html page.
 ```
 
-### ul>li*3#name$
+### ul>li\*3#name\$
+
 ```html
 <ul>
   <li id="name1"></li>
@@ -16,56 +18,59 @@ Will create a skeleton html page.
 </ul>
 ```
 
-***
-
-
+---
 
 ## CSS
 
 ### m10
-```` css
+
+```css
 margin: 10px;
-````
+```
 
 ### p10
-```` css
+
+```css
 padding: 10px;
-````
+```
 
 ### dn
-```` css
+
+```css
 display: none;
-````
+```
 
 ---
 
-![Test Image](.\images\testImage.png)
+![Test Image](.\images\TestImage.png)
 
 ## React
 
 ### rcc
-````
+
+```
 Create a React class component
-````
+```
 
 ### rfc
-````
+
+```
 Create a stateless functional component
-````
+```
 
 ### impt
-````
+
+```
 inserts: import PropTypes from 'prop-types'
 Does not include the ending semi-colon;
-````
+```
 
 ---
-
-
 
 ## Javascript
 
 ### aja
-````
+
+```
 Will create a $.ajax({}) code block.
-````
+```
