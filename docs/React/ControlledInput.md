@@ -64,7 +64,7 @@ You could obviously still have the *onChange* call a separately defined method i
 
 ````javascript
 ...
-onInputChange(e) {
+onInputChange = (e) => {     // use an arrow function or bind 'this' in the constructor
         console.log(e.target.value);
     }
 ...
@@ -72,6 +72,56 @@ onInputChange(e) {
                   type="text"
                   value={this.state.term}
                   onChange={this.onInputChange}
+                />
+...
+````
+
+With *bind* in the constructor
+
+````javascript
+constructor(props) {
+    super(props);
+    this.onInputChange = this.onInputChange.bind(this);
+}
+ onInputChange(e) {
+        console.log(e.target.value);
+    }
+...
+                <input
+                  type="text"
+                  value={this.state.term}
+                  onChange={this.onInputChange}
+                />
+...
+````
+
+With an arrow function in the call
+
+````javascript
+onInputChange(e) {
+        console.log(e.target.value);
+    }
+...
+                <input
+                  type="text"
+                  value={this.state.term}
+                  onChange={(e) => this.onInputChange(e)}
+                />
+...
+````
+
+You can bind in line also but not considered a best practice
+
+````javascript
+...
+onInputChange(e) {
+        console.log(e.target.value);
+    }
+...
+                <input
+                  type="text"
+                  value={this.state.term}
+                  onChange={this.onInputChange.bind(this)}
                 />
 ...
 ````
