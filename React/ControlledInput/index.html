@@ -296,18 +296,30 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../../RegEx/" title="RegEx" class="md-nav__link">
+      RegEx
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       React
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         React
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -401,13 +413,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
     
-    <label class="md-nav__link" for="nav-5-4">
+    <label class="md-nav__link" for="nav-6-4">
       SubSub
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-4">
+      <label class="md-nav__title" for="nav-6-4">
         SubSub
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -540,7 +552,7 @@
 
 <p>You could obviously still have the <em>onChange</em> call a separately defined method if needed.</p>
 <div class="codehilite"><pre><span></span><span class="p">...</span>
-<span class="nx">onInputChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">onInputChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>     <span class="c1">// use an arrow function or bind &#39;this&#39; in the constructor</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">...</span>
@@ -548,6 +560,50 @@
                   <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
                   <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">term</span><span class="p">}</span>
                   <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onInputChange</span><span class="p">}</span>
+                <span class="o">/&gt;</span>
+<span class="p">...</span>
+</pre></div>
+
+<p>With <em>bind</em> in the constructor</p>
+<div class="codehilite"><pre><span></span><span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">onInputChange</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">onInputChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">}</span>
+ <span class="nx">onInputChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">...</span>
+                <span class="o">&lt;</span><span class="nx">input</span>
+                  <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
+                  <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">term</span><span class="p">}</span>
+                  <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onInputChange</span><span class="p">}</span>
+                <span class="o">/&gt;</span>
+<span class="p">...</span>
+</pre></div>
+
+<p>With an arrow function in the call</p>
+<div class="codehilite"><pre><span></span><span class="nx">onInputChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">...</span>
+                <span class="o">&lt;</span><span class="nx">input</span>
+                  <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
+                  <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">term</span><span class="p">}</span>
+                  <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">onInputChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)}</span>
+                <span class="o">/&gt;</span>
+<span class="p">...</span>
+</pre></div>
+
+<p>You can bind in line also but not considered a best practice</p>
+<div class="codehilite"><pre><span></span><span class="p">...</span>
+<span class="nx">onInputChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">...</span>
+                <span class="o">&lt;</span><span class="nx">input</span>
+                  <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
+                  <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">term</span><span class="p">}</span>
+                  <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onInputChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)}</span>
                 <span class="o">/&gt;</span>
 <span class="p">...</span>
 </pre></div>
@@ -571,7 +627,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../MkDocs/" title="MkDocs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../RegEx/" title="RegEx" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -580,7 +636,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                MkDocs
+                RegEx
               </span>
             </div>
           </a>
