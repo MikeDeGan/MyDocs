@@ -1,0 +1,1069 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Random development documentation">
+      
+      
+        <link rel="canonical" href="https://mikedegan.github.io/MyDocs/JavaScript/loops/">
+      
+      
+        <meta name="author" content="Mike DeGan">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>Loops in JavaScript - MyDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#loops-in-javascript" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://mikedegan.github.io/MyDocs/" title="MyDocs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">library_books</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                MyDocs
+              </span>
+              <span class="md-header-nav__topic">
+                Loops in JavaScript
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/MikeDeGan/MyDocs" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      MikeDeGan/MyDocs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://mikedegan.github.io/MyDocs/" title="MyDocs" class="md-nav__button md-logo">
+      
+        <i class="md-icon">library_books</i>
+      
+    </a>
+    MyDocs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/MikeDeGan/MyDocs" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      MikeDeGan/MyDocs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome to MkDocs" class="md-nav__link">
+      Welcome to MkDocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Emmet/" title="Emmet Commands" class="md-nav__link">
+      Emmet Commands
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../ImageTestDoc/" title="Copy and Paste from clipboard" class="md-nav__link">
+      Copy and Paste from clipboard
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../MkDocs/" title="MkDocs" class="md-nav__link">
+      MkDocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../RegEx/" title="RegEx" class="md-nav__link">
+      RegEx
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      JavaScript
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        JavaScript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Loops in JavaScript
+      </label>
+    
+    <a href="./" title="Loops in JavaScript" class="md-nav__link md-nav__link--active">
+      Loops in JavaScript
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#forloop" title="for…loop" class="md-nav__link">
+    for…loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forof-loops" title="for…of loops" class="md-nav__link">
+    for…of loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forin-loops" title="for…in loops" class="md-nav__link">
+    for…in loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-loops" title="while loops" class="md-nav__link">
+    while loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dowhile-loops" title="do…while loops" class="md-nav__link">
+    do…while loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayforeach" title="array.forEach()" class="md-nav__link">
+    array.forEach()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayfind" title="array.find()" class="md-nav__link">
+    array.find()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayfindindex" title="array.findIndex()" class="md-nav__link">
+    array.findIndex()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arraysome" title="array.some()" class="md-nav__link">
+    array.some()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayevery" title="array.every()" class="md-nav__link">
+    array.every()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayreduce" title="array.reduce()" class="md-nav__link">
+    array.reduce()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayreduceright" title="array.reduceRight()" class="md-nav__link">
+    array.reduceRight()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arraymap" title="array.map()" class="md-nav__link">
+    array.map()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayfilter" title="array.filter()" class="md-nav__link">
+    array.filter()
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      React
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        React
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../React/ControlledInput/" title="Controlled Input" class="md-nav__link">
+      Controlled Input
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../React/DocWorkFlowSettings/" title="Documentation Work Flow Settings" class="md-nav__link">
+      Documentation Work Flow Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../React/SubFile/" title="test of file in sub folder" class="md-nav__link">
+      test of file in sub folder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-4" type="checkbox" id="nav-7-4">
+    
+    <label class="md-nav__link" for="nav-7-4">
+      SubSub
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-4">
+        SubSub
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../React/SubSub/ImageTestDocInSubSub/" title="Copy and Paste from clipboard" class="md-nav__link">
+      Copy and Paste from clipboard
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#forloop" title="for…loop" class="md-nav__link">
+    for…loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forof-loops" title="for…of loops" class="md-nav__link">
+    for…of loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forin-loops" title="for…in loops" class="md-nav__link">
+    for…in loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-loops" title="while loops" class="md-nav__link">
+    while loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dowhile-loops" title="do…while loops" class="md-nav__link">
+    do…while loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayforeach" title="array.forEach()" class="md-nav__link">
+    array.forEach()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayfind" title="array.find()" class="md-nav__link">
+    array.find()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayfindindex" title="array.findIndex()" class="md-nav__link">
+    array.findIndex()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arraysome" title="array.some()" class="md-nav__link">
+    array.some()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayevery" title="array.every()" class="md-nav__link">
+    array.every()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayreduce" title="array.reduce()" class="md-nav__link">
+    array.reduce()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayreduceright" title="array.reduceRight()" class="md-nav__link">
+    array.reduceRight()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arraymap" title="array.map()" class="md-nav__link">
+    array.map()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayfilter" title="array.filter()" class="md-nav__link">
+    array.filter()
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="loops-in-javascript">Loops in JavaScript<a class="headerlink" href="#loops-in-javascript" title="Permanent link">&para;</a></h1>
+<p>Author: Lilian Lin</p>
+<p><a href="https://medium.com/@linlinghao/loops-in-javascript-6aeed4a2c343">Original Medium Article</a></p>
+<p>Loops in JavaScript means a chunk of codes executed repeatedly in certain amount.</p>
+<p>For example, if we want to print “Hello” in console for 5 times, we can write the following statements:</p>
+<div class="codehilite"><pre><span></span>console.log(&#39;Hello&#39;);
+console.log(&#39;Hello&#39;);
+console.log(&#39;Hello&#39;);
+console.log(&#39;Hello&#39;);
+console.log(&#39;Hello&#39;);
+</pre></div>
+
+<h3 id="forloop">for…loop<a class="headerlink" href="#forloop" title="Permanent link">&para;</a></h3>
+<p>Seems like too much. This is the time when loops jump in. Just need to write the statement one time, give it a condition, then the statement can be executed repeatedly while the condition evaluates to true.</p>
+<div class="codehilite"><pre><span></span>for(let i = 0; i &lt; 5; i++){
+  console.log(&#39;Hello&#39;);
+}
+</pre></div>
+
+<p><strong>for loops</strong> is the most basic one in JavaScript, we can see it as a counter. It requires 3 statements in parenthesis:</p>
+<ol>
+<li>Initialize the counter: <strong>let i=0</strong> (the counter starts from 0)<strong>.</strong></li>
+<li>Condition, which tells the <strong>for loop</strong> when to stop: <strong>i &lt; 5</strong> (when i reaches 5, the condition evaluates to false, the loop stops running).</li>
+<li>Increment or Decrement the counting: <strong>i++</strong> (starts from 0, each time increase 1. if you use — — , then the counter will decrease 1).</li>
+</ol>
+<p>So each time computer will evaluate if the variable’s current value passes condition. If it is, run the code inside. If it’s not, stop the loops.</p>
+<div class="codehilite"><pre><span></span>//
+i = 0
+i&lt;5? true
+&#39;Hello&#39;
+i++ =&gt; i = 1
+i&lt;5? true
+&#39;Hello&#39;
+i++ =&gt; i = 2
+i&lt;5? true
+&#39;Hello&#39;
+i++ =&gt; i = 3
+i&lt;5? true
+&#39;Hello&#39;
+i++ =&gt; i = 4
+i&lt;5? true
+&#39;Hello&#39;
+i++ =&gt; i = 5
+i&lt;5? false
+stop counting!
+</pre></div>
+
+<p><strong>for loops</strong> are also often used on array:</p>
+<div class="codehilite"><pre><span></span>const arr = [&#39;H&#39;, &#39;E&#39;, &#39;L&#39;, &#39;L&#39;, &#39;O&#39;];
+for(let i = 0; i &lt; arr.length; i++){
+  console.log(arr[i]);
+}
+//in console will print:
+H // i = 0, i &lt; 5?true, i++, print arr[0]
+E // i = 1, i &lt; 5?true, i++, print arr[1]
+L // i = 2, i &lt; 5?true, i++, print arr[2]
+L // i = 3, i &lt; 5?true, i++, print arr[3]
+O // i = 4, i &lt; 5?true, i++, print arr[4]
+// i = 5, i = arr.length false, stop
+</pre></div>
+
+<h3 id="forof-loops">for…of loops<a class="headerlink" href="#forof-loops" title="Permanent link">&para;</a></h3>
+<p>There is also another loop that can iterate through an array. And with this one, you don’t need to create index variables. Once reaches the end of the array, it will stop looping automatically:</p>
+<div class="codehilite"><pre><span></span>for(let val of arr){
+  console.log(val);
+}
+//in console will print:
+H
+E
+L
+L
+O // this is the last item in arr, stop looping.
+</pre></div>
+
+<p>But <strong>for…of</strong> loops only works with <strong>iterable</strong> values. So it can not be used on objects.</p>
+<h3 id="forin-loops"><strong>for…in</strong> loops<a class="headerlink" href="#forin-loops" title="Permanent link">&para;</a></h3>
+<p>This loop becomes very handy when working with objects. Imagine if you want to print a grocery list, but you are not sure how many items are in this list, so just iterating through it, and print them all.</p>
+<div class="codehilite"><pre><span></span>const grocery = {
+1: &#39;apple&#39;,
+2: &#39;banana&#39;,
+3: &#39;milk&#39;,
+4: &#39;bread&#39;,
+5: &#39;chicken&#39;,
+6: &#39;pasta&#39;
+}
+for(let item in grocery){
+  console.log(item);
+}
+//in console will print:
+apple
+banana
+milk
+bread
+chicken
+pasta // this is the last item in grocery object, stop looping.
+</pre></div>
+
+<h3 id="while-loops"><strong>while loops</strong><a class="headerlink" href="#while-loops" title="Permanent link">&para;</a></h3>
+<p>Then how about we want looping for infinite times and break automatically under certain conditions. This is when <strong>while loops</strong> jump in:</p>
+<div class="codehilite"><pre><span></span>let num = 5;
+while(num&lt;200){
+  console.log(num);
+  num = num*5;
+}
+//in console will print:
+5 // num = 5, num &lt; 200? true, print num, num*5
+25 // num = 25, num &lt; 200? true, print num, num*5
+125 // num = 125, num &lt; 200? true, print num, num*5
+// num = 625, num &lt; 200? false, stop looping
+</pre></div>
+
+<p>As we can see. The condition is evaluated before the statement in the loop is executed. If the condition returns true, the statement is executed and the condition is evaluated again. If the condition returns false, the statement will be stop executing.</p>
+<h3 id="dowhile-loops"><strong>do…while</strong> loops<a class="headerlink" href="#dowhile-loops" title="Permanent link">&para;</a></h3>
+<p>But sometimes we are not sure about what the condition will be returned. In case nothing is executing (the condition evaluates to false at the beginning), we can use <strong>do…while</strong> loops.</p>
+<div class="codehilite"><pre><span></span>let num = 200;
+do {
+  console.log(num);
+} while(num++ &lt; 200)
+//in console will print:
+201 
+// num++ = 201; num++ &lt; 200? false stop looping
+</pre></div>
+
+<p>Have you noticed what’s the difference? <strong>do…while</strong> loops evaluate its condition after the execution of the given statement in the loop. So even though the condition returns false at the beginning of iterate, the statement will be executed <strong>at least once</strong>.</p>
+<hr />
+<p>When we started learning <strong>for loops</strong>, we usually use it on arrays. However array as the ‘most iterable’ object, instead of passing it into for loops, we can also make use of build-in array method that offers more straight forward syntax to reach different goals.</p>
+<p>I’d like to put those methods in two kinds:</p>
+<ol>
+<li>iterate without returning a new array.</li>
+<li>iterate and create a new array.</li>
+</ol>
+<h3 id="arrayforeach"><strong>array.forEach()</strong><a class="headerlink" href="#arrayforeach" title="Permanent link">&para;</a></h3>
+<p>It will execute a function on every item in the array. <strong>No new array will be returned</strong>.</p>
+<p><strong>forEach</strong> method will take a function as its argument. When the function starts iterating, it will have access to three things about current item: <strong>value*</strong>,* <strong>index*</strong>,***object.**</p>
+<div class="codehilite"><pre><span></span>const grocery = [&#39;apple&#39;,&#39;banana&#39;,&#39;milk&#39;,&#39;bread&#39;,&#39;chicken&#39;]
+grocery.forEach(function(value, index, object){
+  console.log(value, index, object);
+})
+//in console will print:
+apple 0 (5) [&quot;apple&quot;, &quot;banana&quot;, &quot;milk&quot;, &quot;bread&quot;, &quot;chicken&quot;]
+banana 1 (5) [&quot;apple&quot;, &quot;banana&quot;, &quot;milk&quot;, &quot;bread&quot;, &quot;chicken&quot;]
+milk 2 (5) [&quot;apple&quot;, &quot;banana&quot;, &quot;milk&quot;, &quot;bread&quot;, &quot;chicken&quot;]
+bread 3 (5) [&quot;apple&quot;, &quot;banana&quot;, &quot;milk&quot;, &quot;bread&quot;, &quot;chicken&quot;]
+chicken 4 (5) [&quot;apple&quot;, &quot;banana&quot;, &quot;milk&quot;, &quot;bread&quot;, &quot;chicken&quot;]
+pasta 5 (5) [&quot;apple&quot;, &quot;banana&quot;, &quot;milk&quot;, &quot;bread&quot;, &quot;chicken&quot;]
+</pre></div>
+
+<p>But usually we just need the value argument to work on, and arrow function will make such method a cleaner syntax.</p>
+<div class="codehilite"><pre><span></span>grocery.forEach(value =&gt; console.log(value))
+//in console will print:
+apple
+banana
+milk
+bread
+chicken
+pasta
+</pre></div>
+
+<h3 id="arrayfind"><strong>array.find()</strong><a class="headerlink" href="#arrayfind" title="Permanent link">&para;</a></h3>
+<p>It will take a condition in the provided function, and return the <strong>first element**that passes the condition. If nothing fulfills the condition, **undefined</strong> will be returned.</p>
+<div class="codehilite"><pre><span></span>const num = [1,2,3,4,5,6];
+let smallNum = num.find(item =&gt; item &lt; 3);
+let bigNum = num.find(item =&gt; item &gt; 6);
+console.log(smallNum, bigNum);
+//in console will print:
+1 undefined 
+// though 1,2 are both &lt; 3, 1 is the first value passed the test, so only 1 is returned.
+// no value in the num array is &gt; 6, so undefined is returned.
+</pre></div>
+
+<h3 id="arrayfindindex">array.findIndex()<a class="headerlink" href="#arrayfindindex" title="Permanent link">&para;</a></h3>
+<p>This method is similar with the <strong>.find()</strong> method, the only difference is that it returns the <strong>index</strong> of the first element that pass the condition. If no item passes the test, it returns <strong>-1</strong>.</p>
+<div class="codehilite"><pre><span></span>const num = [1,2,3,4,5,6];
+let smallIndex = num.findIndex(item =&gt; item &lt; 3);
+let bigIndex = num.findIndex(item =&gt; item &gt; 6);
+console.log(smallIndex, bigIndex);
+//in console will print:
+0 -1 
+</pre></div>
+
+<h3 id="arraysome">array.some()<a class="headerlink" href="#arraysome" title="Permanent link">&para;</a></h3>
+<p>This method also takes a condition given by the function. It checks if <strong>any**elements in the array pass the condition (**at least one</strong>). It returns <strong>true / false</strong>.</p>
+<div class="codehilite"><pre><span></span>const num = [1,2,3,4,5,6];
+let isSmall = num.some(item =&gt; item &lt; 3);
+let isBig = num.some(item =&gt; item &gt; 6);
+console.log(isSmall, isBig);
+//in console will print:
+true false
+</pre></div>
+
+<h3 id="arrayevery"><strong>array.every()</strong><a class="headerlink" href="#arrayevery" title="Permanent link">&para;</a></h3>
+<p>It checks whether <strong>all</strong> elements in the array pass the condition. It returns <strong>true / false</strong>.</p>
+<div class="codehilite"><pre><span></span>const num = [1,2,3,4,5,6];
+let areSmall = num.every(item =&gt; item &lt; 3);
+let areBig = num.every(item =&gt; item &gt; 6);
+console.log(areSmall, areBig);
+//in console will print:
+false false
+</pre></div>
+
+<h3 id="arrayreduce">array.reduce()<a class="headerlink" href="#arrayreduce" title="Permanent link">&para;</a></h3>
+<p>This is a really helpful and ‘fancy’ method.</p>
+<p>It executes a provided function on each element of the array, and reduce the value of the array to <strong>a single value</strong>. The provided function must take two parameters:</p>
+<p>\1. <strong>accumulator</strong>: it accumulates the returned value.
+\2. <strong>currentValue</strong>: the element being processed in the array.</p>
+<div class="codehilite"><pre><span></span>const num = [1,2,3,4,5,6];
+let sum = num.reduce((accumulator, currentValue) =&gt; {
+  return accumulator + currentValue;
+})
+console.log(sum);
+// 
+accumulator = 1, currentValue = 2, return 3
+accumulator = 3, currentValue = 3, return 6
+accumulator = 6, currentValue = 4, return 10
+accumulator = 10, currentValue = 5, return 15
+accumulator = 15, currentValue = 6, return 21
+//in console will print:
+21
+</pre></div>
+
+<h3 id="arrayreduceright">array.reduceRight()<a class="headerlink" href="#arrayreduceright" title="Permanent link">&para;</a></h3>
+<p>It works exactly the same as .reduce() method, the only difference is it iterates an array backwards, from right to the left side.</p>
+<div class="codehilite"><pre><span></span>const newNum = [1,10,100,1000];
+let minus= newNum.reduceRight((accumulator, currentValue) =&gt; {
+  return accumulator - currentValue;
+})
+console.log(minus);
+// 
+accumulator = 1000, currentValue = 100, return 900
+accumulator = 900, currentValue = 10, return 890
+accumulator = 890, currentValue = 1, return 889
+//in console will print:
+889
+</pre></div>
+
+<p>All the iterating methods above do not return a new array. But there are times we need our input data immutable, which means a new array should be created from the existing array. For example, in React Redux, we have to work on new datas, and the original data can not be mutated.</p>
+<p>So let’s talk about the second type:</p>
+<h3 id="arraymap">array.map()<a class="headerlink" href="#arraymap" title="Permanent link">&para;</a></h3>
+<p>This method is similar with forEach(), which executes the given function on each item in the current array. And it creates <strong>a new array</strong> with the result of the provided function.</p>
+<div class="codehilite"><pre><span></span>const num = [1,2,3,4,5,6];
+let multiply = num.map(value =&gt; value * 2);
+console.log(multiply);
+//in console will print:
+[2, 4, 6, 8, 10, 12]
+</pre></div>
+
+<h3 id="arrayfilter">array.filter()<a class="headerlink" href="#arrayfilter" title="Permanent link">&para;</a></h3>
+<p>This method takes a condition in the provided function, and iterates through the array to check if each element passes the condition. Then it will <strong>create a new array</strong> with all the elements that passed the condition.</p>
+<p>If none of the elements pass the condition, <strong>an empty array</strong> is created.This method is useful when you need to find one or more items based on a condition you create.</p>
+<div class="codehilite"><pre><span></span>const num = [1,2,3,4,5,6];
+let smallNums = num.filter(item =&gt; item &lt; 3);
+let bigNums = num.filter(item =&gt; item &gt; 6);
+console.log(smallNums, bigNums);
+//in console will print:
+[1,2] []
+</pre></div>
+
+<hr />
+<p>We’ve covered different loop functions above. But how do we choose which to use? Below are my own rules of thumbs:</p>
+<ol>
+<li>Following the functional programming practices, given an array, we don’t want to mutate the original array, so definitely consider array method: like map(), filter().</li>
+<li>If we simply want to iterate an array, array methods like forEach() can usually do what we want. forEach() can take a callback function with an arity of three and you can pass the element index to it.</li>
+<li>If we want to iterate through all keys of an object, consider for…in loops.</li>
+<li>If we want your statement run at least once, use do…while.</li>
+<li>If any of above is not what we want, for loop always a fallback choice for us to customize our functions and conditions.</li>
+</ol>
+<p>Above are my personal preferences about using loops in Javascript. In reality, situations are more complicated and nuanced, and require our judgement and team agreements to write the looping code. Don’t forget, the ultimate goal is to make our code expressive, so that it’s easy to read and maintain.</p>
+<p>Using loops in JavaScript is like riding a rollercoaster, it seems to have a lot of different types. But no matter how it changes, the main idea never changes — iterate&amp;run.</p>
+<p>Enjoy your rides!</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../RegEx/" title="RegEx" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                RegEx
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../React/ControlledInput/" title="Controlled Input" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Controlled Input
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 - 2019 Mike DeGan
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/MikeDeGan" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/MikeRockinOut" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/mike-degan/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

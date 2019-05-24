@@ -2,47 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://mikedegan.github.io/MyDocs/</loc>
-     <lastmod>2019-03-06</lastmod>
+     <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mikedegan.github.io/MyDocs/Emmet/</loc>
-     <lastmod>2019-03-06</lastmod>
+     <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mikedegan.github.io/MyDocs/ImageTestDoc/</loc>
-     <lastmod>2019-03-06</lastmod>
+     <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mikedegan.github.io/MyDocs/MkDocs/</loc>
-     <lastmod>2019-03-06</lastmod>
+     <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mikedegan.github.io/MyDocs/RegEx/</loc>
-     <lastmod>2019-03-06</lastmod>
+     <lastmod>2019-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://mikedegan.github.io/MyDocs/JavaScript/loops/</loc>
+     <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mikedegan.github.io/MyDocs/React/ControlledInput/</loc>
-     <lastmod>2019-03-06</lastmod>
+     <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mikedegan.github.io/MyDocs/React/DocWorkFlowSettings/</loc>
-     <lastmod>2019-03-06</lastmod>
+     <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mikedegan.github.io/MyDocs/React/SubFile/</loc>
-     <lastmod>2019-03-06</lastmod>
+     <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mikedegan.github.io/MyDocs/React/SubSub/ImageTestDocInSubSub/</loc>
-     <lastmod>2019-03-06</lastmod>
+     <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
